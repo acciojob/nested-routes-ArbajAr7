@@ -1,43 +1,38 @@
-
 import React from "react";
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  NavLink,
-} from "react-router-dom";
-
-import Home from "./Home";
+import './../styles/App.css';
+import {BrowserRouter, Outlet, Route, Routes} from 'react-router-dom'
+import Groming from "./Groming";
+import Jwellery from "./Jwellery";
+import Trouser from './Trouser';
+import Shirt from './Shirt'
+import Header from "./Header";
 import Women from "./Women";
-import Grooming from "./Grooming";
-import Shirt from "./Shirt";
-import Trouser from "./Trouser";
-import Jewellery from "./Jewellery";
+import Home from "./Home"
+import Layout from "./Layout";
 
 const App = () => {
   return (
-    <Router>
-      <h1>React Router</h1>
+    <div>
+        {/* Do not remove the main div */}
+        <main>
+        <BrowserRouter>
+        
+        <Outlet></Outlet>
+          <Routes>
+            <Route path="/" element={<Layout/>}>
+            <Route index  element={<Home/>}/>
+              <Route path="women" element={<Women/>}>
+                 <Route path="Groming" element={<Groming/>}/>
+                 <Route path="Trouser" element={<Trouser/>}/>
+                 <Route path="Jwellery" element={<Jwellery/>}/>
+                 <Route path="Shirt" element={<Shirt/>}/>
+               </Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+        </main>
+    </div>
+  )
+}
 
-      <ul>
-      <li> <NavLink to="/">Home</NavLink></li> 
-      <li> <NavLink to="/women">Women</NavLink></li> 
-      </ul>
-
-      <Routes>
-      
-        <Route path="/" element={<Home />} />
-
-        <Route path="/women" element={<Women />}>
-          <Route path="Grooming" element={<Grooming />} />
-          <Route path="Shirt" element={<Shirt />} />
-          <Route path="Trouser" element={<Trouser />} />
-          <Route path="Jewellery" element={<Jewellery />} />
-        </Route>
-      </Routes>
-    </Router>
-  );
-};
-
-export default App;
+export default App

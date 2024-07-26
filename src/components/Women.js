@@ -1,28 +1,28 @@
-import React from "react";
-import { Outlet, NavLink } from "react-router-dom";
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 
 const Women = () => {
   return (
     <div>
-      Women Items
-      <ul>
-        <li>
-          {" "}
-          <NavLink to="Grooming">Grooming</NavLink>
-        </li>
-        <li>
-          {" "}
-          <NavLink to="Shirt">Shirt</NavLink>
-        </li>
-        <li>
-          {" "}
-          <NavLink to="Trouser">Trouser</NavLink>
-        </li>
-        <li>
-          <NavLink to="Jewellery">Jewellery</NavLink>
-        </li>
-      </ul>
-      <Outlet />
+      <main>
+      <div>Women Items:</div>
+        <ul>
+           
+          <li>
+            <Link to='Groming'>Grooming</Link>
+          </li>
+          <li>
+            <Link to='Shirt'>Shirt</Link>
+          </li>
+          <li>
+            <Link to='Trouser'>Trouser</Link>
+          </li>
+          <li>
+            <Link to='Jwellery'>Jewellery</Link>
+          </li>
+        </ul>
+      </main>
+      <Outlet/>
     </div>
   );
 };

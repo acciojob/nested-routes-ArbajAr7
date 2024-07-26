@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Trouser = () => {
+const Jwellery = () => {
   return (
     <div>
     <main>
-      <p>Trouser</p>
+      <p>Jwellery</p>
       </main>
     </div>
   )
 }
 
-export default Trouser
+export default Jwellery
